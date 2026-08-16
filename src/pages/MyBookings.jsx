@@ -102,12 +102,12 @@ export default function MyBookings() {
     <div className="min-h-screen flex flex-col bg-cream/30">
       <Navbar />
 
-      <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-navy">My Booking History</h1>
-            <p className="text-navy/60 text-sm mt-1">
+            <h1 className="text-2xl sm:text-3xl font-bold text-navy font-serif">My Booking History</h1>
+            <p className="text-navy/60 text-xs sm:text-sm mt-1">
               View your reservations, reference codes, and check-in details.
             </p>
           </div>
@@ -121,13 +121,14 @@ export default function MyBookings() {
         </div>
 
         {/* Filter Pills */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-1">
+        <div className="flex gap-2 mb-6 overflow-x-auto pb-2 scrollbar-none">
           {[
             { key: "all", label: `All (${bookings.length})` },
             {
               key: "upcoming",
-              label: `Active & Upcoming (${bookings.filter((b) => b.status === "booked" || b.status === "checked-in").length
-                })`,
+              label: `Active & Upcoming (${
+                bookings.filter((b) => b.status === "booked" || b.status === "checked-in").length
+              })`,
             },
             {
               key: "completed",
@@ -137,10 +138,11 @@ export default function MyBookings() {
             <button
               key={tab.key}
               onClick={() => setFilter(tab.key)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition cursor-pointer ${filter === tab.key
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition cursor-pointer shrink-0 ${
+                filter === tab.key
                   ? "bg-navy text-white shadow-sm"
                   : "bg-white border border-sage/40 text-navy hover:bg-cream/40"
-                }`}
+              }`}
             >
               {tab.label}
             </button>

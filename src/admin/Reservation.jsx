@@ -110,32 +110,32 @@ export default function Reservation() {
   };
 
   return (
-    <div className="p-8">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-navy">Guest Reservations</h1>
-        <p className="text-navy/60 text-sm mt-1">
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-bold text-navy">Guest Reservations</h1>
+        <p className="text-navy/60 text-xs sm:text-sm mt-1">
           Look up arrivals, verify guest ID/Passport, and confirm check-ins &
           check-outs.
         </p>
       </div>
 
       {/* Search & Filter Toolbar */}
-      <div className="bg-white p-4 rounded-xl border border-sage/30 shadow-sm flex flex-col md:flex-row gap-4 mb-6">
+      <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-sage/30 shadow-sm flex flex-col sm:flex-row gap-3 sm:gap-4">
         <div className="flex-1">
           <input
             type="text"
-            placeholder="Search by Ref Code (e.g. LK-1234), Name, Phone, or Passport..."
+            placeholder="Search by Ref Code, Name, Phone, or Room..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full border border-sage rounded-lg px-4 py-2.5 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
+            className="w-full border border-sage rounded-lg px-3.5 py-2 text-sm text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
           />
         </div>
         <div>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="border border-sage rounded-lg px-4 py-2.5 text-navy bg-white focus:outline-none focus:ring-2 focus:ring-chestnut"
+            className="w-full sm:w-auto border border-sage rounded-lg px-3.5 py-2 text-sm text-navy bg-white focus:outline-none focus:ring-2 focus:ring-chestnut cursor-pointer"
           >
             <option value="all">All Statuses</option>
             <option value="booked">Booked (Pending Check-In)</option>

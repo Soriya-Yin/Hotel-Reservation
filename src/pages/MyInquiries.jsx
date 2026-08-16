@@ -63,11 +63,11 @@ export default function MyInquiries() {
   return (
     <div className="min-h-screen flex flex-col bg-cream/30">
       <Navbar />
-      <div className="flex-1 max-w-4xl mx-auto w-full px-6 py-12">
-        <h1 className="text-3xl font-bold text-navy mb-2">
+      <div className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
+        <h1 className="text-2xl sm:text-3xl font-bold text-navy mb-2 font-serif">
           Message from admin
         </h1>
-        <p className="text-navy/60 text-sm mb-8">
+        <p className="text-navy/60 text-xs sm:text-sm mb-6 sm:mb-8">
           Thank you for using our service. We hope you have a wonderful stay!
         </p>
 

@@ -97,23 +97,23 @@ export default function Inbox() {
   };
 
   return (
-    <div className="p-8">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-navy">Inbox Messages</h1>
-          <p className="text-navy/60 text-sm mt-1">
+          <h1 className="text-2xl sm:text-3xl font-bold text-navy">Inbox Messages</h1>
+          <p className="text-navy/60 text-xs sm:text-sm mt-1">
             Read guest inquiries and send official replies.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 overflow-x-auto pb-1">
           {["all", "unread", "read", "replied"].map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 filter === f
                   ? "bg-chestnut text-white shadow-sm"
                   : "bg-white border border-sage/40 text-navy hover:bg-cream/30"

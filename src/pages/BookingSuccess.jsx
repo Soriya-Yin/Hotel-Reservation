@@ -13,15 +13,15 @@ export default function BookingSuccess() {
   return (
     <div className="min-h-screen flex flex-col bg-cream/30">
       <Navbar />
-      <div className="flex-1 max-w-2xl mx-auto w-full px-6 py-12">
-        <div className="bg-navy text-white rounded-xl p-8 text-center mb-8">
-          <h1 className=" text-3xl font-bold mb-2">
+      <div className="flex-1 max-w-2xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
+        <div className="bg-navy text-white rounded-xl p-6 sm:p-8 text-center mb-6 sm:mb-8 shadow-sm">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-serif">
             Thank you for choosing LorkKei Hotel!
           </h1>
-          <p className="text-sage">We are delighted to guest you.</p>
+          <p className="text-sage text-sm sm:text-base">We are delighted to guest you.</p>
         </div>
 
-        <div className="bg-white border border-sage rounded-xl p-6">
+        <div className="bg-white border border-sage rounded-xl p-4 sm:p-6 shadow-sm">
           <div className="flex items-center justify-between border-b border-sage pb-4 mb-4">
             <span className="text-sm text-navy/60">Booking Reference</span>
             <span className=" text-xl font-bold text-chestnut">

@@ -188,11 +188,11 @@ export default function Reserve() {
   return (
     <div className="min-h-screen flex flex-col bg-cream/30">
       <Navbar />
-      <div className="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
+      <div className="flex-1 max-w-3xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
         {/* Header summary */}
-        <div className="bg-navy text-white rounded-xl p-6 mb-8 shadow-sm">
-          <h1 className="text-2xl font-bold mb-1">Reserve: {roomType.name}</h1>
-          <p className="text-sage text-sm">
+        <div className="bg-navy text-white rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 shadow-sm">
+          <h1 className="text-xl sm:text-2xl font-bold mb-1">Reserve: {roomType.name}</h1>
+          <p className="text-sage text-xs sm:text-sm">
             ${roomType.price}/night · Up to {roomType.maxGuests} guests ·{" "}
             {roomType.condition}
           </p>
@@ -208,7 +208,7 @@ export default function Reserve() {
         {/* Reservation Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white border border-sage rounded-xl p-6 space-y-4 shadow-sm"
+          className="bg-white border border-sage rounded-xl p-4 sm:p-6 md:p-8 space-y-4 shadow-sm"
         >
           {/* Row 1: Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

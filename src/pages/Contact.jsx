@@ -90,18 +90,18 @@ export default function Contact() {
       <Navbar />
 
       {/* Main */}
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12 md:py-16">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <p className="text-chestnut uppercase tracking-[0.2em] text-xs font-semibold mb-2">
             Get in Touch
           </p>
 
-          <h1 className=" text-4xl md:text-5xl font-bold text-navy mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 font-serif">
             Contact Us
           </h1>
 
-          <p className="max-w-2xl mx-auto text-sm md:text-base text-navy/60">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base text-navy/60">
             Have a question or need assistance? Send us a message and our team
             will be happy to help make your stay comfortable.
           </p>

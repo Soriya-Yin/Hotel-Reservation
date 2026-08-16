@@ -15,18 +15,18 @@ export default function Landing() {
       <Navbar />
 
       {/* Hero Banner Section */}
-      <section className="relative bg-navy text-white overflow-hidden py-24">
+      <section className="relative bg-navy text-white overflow-hidden py-16 sm:py-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${banner})` }}
         />
         <div className="absolute inset-0 bg-navy/60" />
 
-        <div className="relative max-w-5xl mx-auto px-6 text-center z-10">
-          <h1 className=" text-4xl md:text-5xl font-bold mb-4">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-serif">
             Welcome to LorkKei Hotel
           </h1>
-          <p className="text-sage text-lg max-w-2xl mx-auto">
+          <p className="text-sage text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Warm rooms, honest prices, and a stay you'll want to repeat. Book
             your escape in under a minute.
           </p>
@@ -34,11 +34,11 @@ export default function Landing() {
       </section>
 
       {/* Room Grid Section */}
-      <section className="max-w-6xl mx-auto px-6 py-16 flex-1 w-full">
-        <h2 className=" text-3xl font-bold text-navy text-center mb-2">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 flex-1 w-full">
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy text-center mb-2 font-serif">
           Available Rooms
         </h2>
-        <p className="text-center text-navy/60 mb-10">
+        <p className="text-center text-navy/60 text-sm sm:text-base mb-8 sm:mb-10">
           Find the perfect room for your comfortable stay.
         </p>
 
