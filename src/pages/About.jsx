@@ -1,20 +1,3 @@
-// import Navbar from "../components/Navbar";
-// import Footer from "../components/Footer";
-
-// export default function About() {
-//   return (
-//     <div>
-//       <Navbar />
-//       <h1>Our story</h1>
-//       <p>
-//         LokKei is the oldest hotel in Siem Reab, that was built since 1986 come
-//         with France architicture.We have 40 room to server for every customer
-//         follow the requirement they needed.
-//       </p>
-//       <Footer />
-//     </div>
-//   );
-// }
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -98,17 +81,17 @@ export default function About() {
       <section className="bg-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 text-center">
           <div>
-            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 font-serif">1986</h3>
+            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 ">1986</h3>
             <p className="mt-2 text-sm sm:text-base text-gray-300">Established</p>
           </div>
 
           <div>
-            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 font-serif">40</h3>
+            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 ">40</h3>
             <p className="mt-2 text-sm sm:text-base text-gray-300">Hotel Rooms</p>
           </div>
 
           <div>
-            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 font-serif">40+</h3>
+            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 ">40+</h3>
             <p className="mt-2 text-sm sm:text-base text-gray-300">Years of Hospitality</p>
           </div>
         </div>

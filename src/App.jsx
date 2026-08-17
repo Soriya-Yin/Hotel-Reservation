@@ -1,7 +1,7 @@
-// App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AuthModal from "./components/AuthModal";
 
 // Public & Customer Pages
 import Landing from "./pages/Landing";
@@ -25,6 +25,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <AuthModal />
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Landing />} />

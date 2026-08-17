@@ -86,7 +86,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream/30">
+    <div className="min-h-screen flex flex-col bg-stone-50">
       <Navbar />
 
       {/* Main */}

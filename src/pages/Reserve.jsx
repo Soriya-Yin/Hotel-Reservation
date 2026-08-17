@@ -178,7 +178,7 @@ export default function Reserve() {
       console.error("Booking error details:", err);
       setError(
         err.message ||
-          "Something went wrong while saving your reservation. Please try again.",
+        "Something went wrong while saving your reservation. Please try again.",
       );
     } finally {
       setSubmitting(false);
@@ -221,6 +221,7 @@ export default function Reserve() {
                 type="text"
                 value={form.firstName}
                 onChange={update("firstName")}
+                placeholder="Lionel"
                 className="w-full border border-sage rounded-md px-3 py-2 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
               />
             </div>
@@ -233,6 +234,7 @@ export default function Reserve() {
                 type="text"
                 value={form.lastName}
                 onChange={update("lastName")}
+                placeholder="Messi"
                 className="w-full border border-sage rounded-md px-3 py-2 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
               />
             </div>
@@ -266,6 +268,7 @@ export default function Reserve() {
               type="tel"
               value={form.phone}
               onChange={update("phone")}
+              placeholder="012 234 456"
               className="w-full border border-sage rounded-md px-3 py-2 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
             />
           </div>
@@ -280,6 +283,7 @@ export default function Reserve() {
               type="email"
               value={form.email}
               onChange={update("email")}
+              placeholder="takaramuu@gmail.com"
               className="w-full border border-sage rounded-md px-3 py-2 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
             />
           </div>
@@ -294,6 +298,7 @@ export default function Reserve() {
               type="text"
               value={form.identityNumber}
               onChange={update("identityNumber")}
+              placeholder="0123840028"
               className="w-full border border-sage rounded-md px-3 py-2 text-navy focus:outline-none focus:ring-2 focus:ring-chestnut"
             />
           </div>

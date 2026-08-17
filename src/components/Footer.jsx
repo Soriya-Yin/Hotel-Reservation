@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import logo from "../assets/logo.png";
 
 export default function Footer() {
+  const { currentUser, openAuthModal } = useAuth();
   return (
     <footer className="bg-navy text-sage mt-16">
       <div className="max-w-7xl mx-auto px-6 py-8 grid gap-6 md:grid-cols-3">
@@ -44,9 +46,26 @@ export default function Footer() {
               Contact Us
             </Link>
 
-            <Link to="/login" className="hover:text-chestnut transition-colors">
-              Sign In
-            </Link>
+            {!currentUser ? (
+              <>
+                <button
+                  onClick={() => openAuthModal("login")}
+                  className="text-left hover:text-chestnut transition-colors cursor-pointer"
+                >
+                  Sign In
+                </button>
+                <button
+                  onClick={() => openAuthModal("signup")}
+                  className="text-left hover:text-chestnut transition-colors cursor-pointer"
+                >
+                  Sign Up
+                </button>
+              </>
+            ) : (
+              <Link to="/my-bookings" className="hover:text-chestnut transition-colors">
+                My Bookings
+              </Link>
+            )}
           </div>
         </div>
 

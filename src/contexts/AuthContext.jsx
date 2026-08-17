@@ -52,10 +52,37 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState("login"); // 'login' | 'signup'
+  const [redirectAfterAuth, setRedirectAfterAuth] = useState(null);
+
+  const openAuthModal = (mode = "login", redirectPath = null) => {
+    setAuthModalMode(mode);
+    setRedirectAfterAuth(redirectPath);
+    setAuthModalOpen(true);
+  };
+
+  const closeAuthModal = () => {
+    setAuthModalOpen(false);
+  };
+
   const isAdmin = currentUser?.email === ADMIN_EMAIL;
   const logout = () => signOut(auth);
 
-  const value = { currentUser, profile, isAdmin, loading, logout };
+  const value = {
+    currentUser,
+    profile,
+    isAdmin,
+    loading,
+    logout,
+    authModalOpen,
+    authModalMode,
+    setAuthModalMode,
+    openAuthModal,
+    closeAuthModal,
+    redirectAfterAuth,
+    setRedirectAfterAuth,
+  };
 
   return (
     <AuthContext.Provider value={value}>

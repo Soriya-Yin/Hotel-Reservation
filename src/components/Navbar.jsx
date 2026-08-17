@@ -4,7 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
-  const { currentUser, profile, isAdmin, logout } = useAuth();
+  const { currentUser, profile, isAdmin, logout, openAuthModal } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +30,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="sticky top-2 z-50 mx-3 sm:mx-6 md:mx-10 lg:mx-16 mb-4">
+    <header className="sticky top-2 z-30 mx-3 sm:mx-6 md:mx-10 lg:mx-16 mb-4">
       <div className="bg-navy text-white shadow-lg rounded-2xl border border-sage/20 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           {/* Logo */}
@@ -97,12 +97,12 @@ export default function Navbar() {
                 </button>
               </>
             ) : (
-              <Link
-                to="/login"
-                className="bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold px-4 py-1.5 rounded-lg transition-colors shadow-sm"
+              <button
+                onClick={() => openAuthModal("login")}
+                className="bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold px-4 py-1.5 rounded-lg transition-colors shadow-sm cursor-pointer"
               >
-                Log in
-              </Link>
+                Sign In
+              </button>
             )}
           </div>
 
@@ -116,7 +116,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle navigation menu"
-              className="p-1.5 text-white/90 hover:text-white rounded-lg hover:bg-cream/10 transition-colors focus:outline-none"
+              className="p-1.5 text-white/90 hover:text-white rounded-lg hover:bg-cream/10 transition-colors focus:outline-none cursor-pointer"
             >
               {mobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -191,18 +191,20 @@ export default function Navbar() {
               {currentUser ? (
                 <button
                   onClick={handleLogout}
-                  className="w-full bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold py-2 rounded-lg transition-colors text-center"
+                  className="w-full bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold py-2 rounded-lg transition-colors text-center cursor-pointer"
                 >
                   Logout
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold py-2 rounded-lg transition-colors text-center"
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openAuthModal("login");
+                  }}
+                  className="block w-full bg-chestnut hover:bg-chestnut/90 text-white text-xs font-semibold py-2 rounded-lg transition-colors text-center cursor-pointer"
                 >
-                  Log in
-                </Link>
+                  Sign In
+                </button>
               )}
             </div>
           </div>
